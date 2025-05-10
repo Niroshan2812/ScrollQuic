@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "ScrolFront",
-    "slug": "ScrolFront",
+    "name": "ScrollFront",
+    "slug": "ScrollFront",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "scrolfront",
+    "scheme": "scrollfront",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
