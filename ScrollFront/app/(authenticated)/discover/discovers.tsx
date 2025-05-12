@@ -1,12 +1,27 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { ScrollView,StyleSheet } from 'react-native'
+import DiscoveryScreen from '../../screens/DiscoveryScreen';
 
-function discovers() {
+const mockData = {
+ PsychologyQuestions: ['Q1', 'Q2', 'Q3', 'Q4', 'Q5'],
+  Mathematics: ['Q4', 'Q5', 'Q6'],
+  Science: ['Q7', 'Q8'],
+}
+  
+
+
+export default function discovers() {
   return (
-   <View>
-    <Text>Discover</Text>
-   </View>
+    <ScrollView style={styles.container} contentContainerStyle={{ padding: 16 }}>
+      <DiscoveryScreen titile="PsycologyQuestions" quections={mockData.PsychologyQuestions} />
+      <DiscoveryScreen titile="Mathemetics" quections={mockData.Mathematics} />
+      <DiscoveryScreen titile="Science" quections={mockData.Science} />
+    </ScrollView>
   )
 }
-
-export default discovers
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+  },
+});

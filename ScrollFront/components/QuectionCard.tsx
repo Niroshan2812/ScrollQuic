@@ -8,7 +8,7 @@ import Animated,{
 } from 'react-native-reanimated';
 import ActionBar from './ActionBar';
 
-const { height } = Dimensions.get('window');
+const { width,height } = Dimensions.get('window');
 
 type Props = {
   question: string;
@@ -29,9 +29,16 @@ export default function QuectionCard({ question, author, backgroundColor }: Prop
     });
   return (
     <Animated.View style={[styles.card, animatedStyle]}>
-      <Text style={styles.question}>{question}</Text>
-      <Text style={styles.author}>Posted by {author}</Text>
-      <ActionBar />
+     
+        <View style={styles.contentContainer}>
+        <View style={styles.textContainer}>
+          <Text style={styles.question}>{question}</Text>
+          
+        </View>
+        <View style={styles.actionContainer}>
+          <ActionBar />
+        </View>
+     </View>
     </Animated.View>
   );
 }
@@ -39,10 +46,18 @@ export default function QuectionCard({ question, author, backgroundColor }: Prop
 const styles = StyleSheet.create({
   card: {
     height,
-    justifyContent: 'center',
-    alignItems: 'center',
+    width,
     padding: 16,
-    
+  },
+  contentContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  textContainer: {
+    flex: 1,
+    justifyContent: 'center',
   },
   question: {
     color: '#fff',
@@ -53,6 +68,11 @@ const styles = StyleSheet.create({
   author: {
     color: '#aaa',
     fontSize: 16,
-    marginBottom: 20,
+    textAlign: 'center',
+  },
+  actionContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingLeft: 16,
   },
 });
