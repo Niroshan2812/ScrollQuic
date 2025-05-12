@@ -45,3 +45,7 @@ export default function RelesScreen() {
     />
   );
 }
+
+export const Tab = {
+  title: 'Feed',
+};

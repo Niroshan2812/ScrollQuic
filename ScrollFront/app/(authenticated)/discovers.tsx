@@ -1,13 +1,13 @@
 import React from 'react'
 import { ScrollView,StyleSheet } from 'react-native'
-import DiscoveryScreen from '../../screens/DiscoveryScreen';
+import DiscoveryScreen from '../screens/DiscoveryScreen';
 
 const mockData = {
  PsychologyQuestions: ['Q1', 'Q2', 'Q3', 'Q4', 'Q5'],
   Mathematics: ['Q4', 'Q5', 'Q6'],
   Science: ['Q7', 'Q8'],
 }
-  
+
 
 
 export default function discovers() {
@@ -25,3 +25,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
 });
+
+export const options = {
+  title:"Discover",
+  headerShown: false,
+};

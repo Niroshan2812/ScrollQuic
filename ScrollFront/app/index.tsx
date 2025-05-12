@@ -7,7 +7,7 @@ export default function Index() {
   useEffect(() => {
     // Redirect to the home page
    const timeout = setTimeout(() => {
-      router.replace('/(authenticated)/feed/reles' ) ;; 
+      router.replace('/(authenticated)/reles' ) ;; 
 
    },100);
     // Cleanup the timeout on unmount

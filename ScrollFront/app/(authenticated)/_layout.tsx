@@ -3,6 +3,8 @@ import { Ionicons } from '@expo/vector-icons';
 
 export default function AuthenticatedLayout() {
   return (
+    <>
+
     <Tabs
       screenOptions={({ route }) => ({
         tabBarIcon: ({ color, size }) => {
@@ -15,7 +17,7 @@ export default function AuthenticatedLayout() {
             case 'discover':
               iconName = 'compass';
               break;
-            case 'user':
+            case 'profile/user':
               iconName = 'person';
               break;
             default:
@@ -24,10 +26,13 @@ export default function AuthenticatedLayout() {
 
           return <Ionicons name={iconName} size={size} color={color} />;
         },
-        tabBarActiveTintColor: '#007AFF',
-        tabBarInactiveTintColor: 'gray',
+        tabBarActiveTintColor: '#673ab7',	
+        tabBarInactiveTintColor: 'black',
         headerShown: false,
       })}
+     
     />
+   </>
+    
   );
 }
