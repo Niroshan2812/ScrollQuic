@@ -1,12 +1,29 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, ScrollView, StyleSheet } from 'react-native'
+import ProfileHeader from '../screens/ProfileHeader';
+import XPProgressBar from '@/components/XPProgressBar';
 
-function user() {
+export default function user() {
+  const userName = "Niroshan Dh";
+  const level = 8;
+  const currntXP =4500;
+  const maxXP = 5000;
+  const badges = [
+    {id:'1', name:'Streak'
+    },
+    { id:'2', name:'Top 10'}
+  ] 
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>User Profile</Text>
-    </View>
+   <ScrollView contentContainerStyle = {styles.container}>
+     <ProfileHeader userName={userName} level={level} />
+     <XPProgressBar currentXP={currntXP} maxXP={maxXP} />
+   </ScrollView>
   )
 }
 
-export default user
+const styles = StyleSheet.create({
+  container:{
+    alignItems:'center',
+    padding: 20,
+  }
+})
