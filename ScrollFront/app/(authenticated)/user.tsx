@@ -3,6 +3,7 @@ import { View, Text, ScrollView, StyleSheet, Button, FlatList } from 'react-nati
 import ProfileHeader from '../screens/ProfileHeader';
 import XPProgressBar from '@/components/XPProgressBar';
 import PerformanceButton from '@/components/PerformacneButton';
+import { useRouter } from 'expo-router';
 
 
 export default function user({}) {
@@ -15,6 +16,29 @@ export default function user({}) {
     },
     { id:'2', name:'Top 10'}
   ] 
+
+  const performanceData = {
+    userId: "user123",
+    level: level,
+    currentXP: currntXP,
+    maxXP: maxXP,
+    badges: badges,
+    performanceMetrics: [
+      {
+        date: "2023-10-26T10:00:00Z",
+        score: 85,
+        accuracy: 90,
+        timeSpent: 120
+      },
+      {
+        date: "2023-10-25T14:30:00Z",
+        score: 78,
+        accuracy: 85,
+        timeSpent: 150
+      }
+    ]
+  };
+  const router = useRouter();
 
   const renderBadgeItem = ({item}: {item: {id: string, name: string}}) => (
     <View style={styles.badgeContainer}>
@@ -34,7 +58,7 @@ export default function user({}) {
     </View>
    )}
    ListFooterComponent={()=>(
-    <PerformanceButton onPress={() => console.log('View Performance Details')} />
+    <PerformanceButton onPress={() => router.push({pathname:'/(authenticated)/performance',params: {data: JSON.stringify(performanceData)}})} />
    )}
    />
   )
