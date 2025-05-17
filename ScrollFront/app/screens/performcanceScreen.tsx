@@ -19,7 +19,7 @@ type PerformanceData = {
     performanceMetrics: PerformanceMetric[];
 };
 
-export default function performance() {
+export default function performcanceScreen() {
     const params = useLocalSearchParams();
     const performanceData: PerformanceData = JSON.parse(params.data as string);
   return (

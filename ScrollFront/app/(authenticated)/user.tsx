@@ -58,7 +58,7 @@ export default function user({}) {
     </View>
    )}
    ListFooterComponent={()=>(
-    <PerformanceButton onPress={() => router.push({pathname:'/(authenticated)/performance',params: {data: JSON.stringify(performanceData)}})} />
+    <PerformanceButton onPress={() => router.push({pathname:'/screens/performcanceScreen',params: {data: JSON.stringify(performanceData)}})} />
    )}
    />
   )
